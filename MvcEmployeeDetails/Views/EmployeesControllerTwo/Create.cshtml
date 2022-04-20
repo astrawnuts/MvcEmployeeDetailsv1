@@ -1,0 +1,126 @@
+﻿@model MvcEmployeeDetails.Models.Employee
+
+@{
+ViewData["Title"] = "New Employee Details";
+}
+
+
+   <div class="container wrapper-employee-form">
+      <div class="header">
+        <div class="left">
+          <img src="@Url.Content("~/img/SecuredSigningLogo.PNG")" alt="Secured Signing Logo" />
+        </div>
+        <div class="right">
+          <p>
+            Commercial in Confidence. <br />
+            Unauthorised Reproduction Prohibited
+          </p>
+        </div>
+      </div>
+      <h1 class="center">New Employee Details</h1>
+          <form asp-action="Create" class="employee-form">
+               <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+     <label asp-for="FirstName" class="control-label"></label>
+     <input asp-for="FirstName" class="form-control" />
+     <span asp-validation-for="FirstName" class="text-danger"></span>
+
+     <label asp-for="LastName" class="control-label"></label>
+     <input asp-for="LastName" class="form-control" />
+     <span asp-validation-for="LastName" class="text-danger"></span>
+
+     <label asp-for="FullAddress" class="control-label"></label>
+     <input asp-for="FullAddress" class="form-control" />
+     <span asp-validation-for="FullAddress" class="text-danger"></span>
+
+     <div class="form-group form-check"></div>
+          <label class="form-check-label">
+               <input class="form-check-input" asp-for="MailingAddressSameAsFullAddress" /> @Html.DisplayNameFor(model
+               => model.MailingAddressSameAsFullAddress)
+          </label>
+
+
+          <label asp-for="MailingAddress" class="control-label"></label>
+          <input asp-for="MailingAddress" class="form-control" />
+          <span asp-validation-for="MailingAddress" class="text-danger"></span>
+
+
+          <label asp-for="EmailAddress" class="control-label"></label>
+          <input type="email" asp-for="EmailAddress" class="form-control" />
+          <span asp-validation-for="EmailAddress" class="text-danger"></span>
+
+          <label asp-for="PhoneNumber" class="control-label"></label>
+          <input asp-for="PhoneNumber" class="form-control" />
+          <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+
+          <label asp-for="CitizenshipStatus" class="control-label"></label>
+          <input asp-for="CitizenshipStatus" class="form-control" />
+          <span asp-validation-for="CitizenshipStatus" class="text-danger"></span>
+
+
+          <label asp-for="EmploymentStartDate" class="control-label"></label>
+          <input type="date" asp-for="EmploymentStartDate" class="form-control" />
+          <span asp-validation-for="EmploymentStartDate" class="text-danger"></span>
+
+
+          <label asp-for="EmploymentType" class="control-label"></label>
+          <input asp-for="EmploymentType" class="form-control" />
+          <span asp-validation-for="EmploymentType" class="text-danger"></span>
+
+
+          <label asp-for="PositionTitle" class="control-label"></label>
+          <input asp-for="PositionTitle" class="form-control" />
+          <span asp-validation-for="PositionTitle" class="text-danger"></span>
+
+          <fieldset>
+          <legend><strong>Emergency Contact Person:</strong></legend>
+          <label asp-for="EmergencyContactName" class="control-label"></label>
+          <input asp-for="EmergencyContactName" class="form-control" />
+          <span asp-validation-for="EmergencyContactName" class="text-danger"></span>
+
+
+          <label asp-for="EmergencyContactRelationship" class="control-label"></label>
+          <input asp-for="EmergencyContactRelationship" class="form-control" />
+          <span asp-validation-for="EmergencyContactRelationship" class="text-danger"></span>
+
+
+          <label asp-for="EmergencyContactPhoneNumber" class="control-label"></label>
+          <input asp-for="EmergencyContactPhoneNumber" class="form-control" />
+          <span asp-validation-for="EmergencyContactPhoneNumber" class="text-danger"></span>
+          </fieldset>
+
+          <label asp-for="EmployeeSignature" class="control-label"></label>
+          <input asp-for="EmployeeSignature" class="form-control" />
+          <span asp-validation-for="EmployeeSignature" class="text-danger"></span>
+
+
+          <button type="submit" class="submit">Submit</button>
+           <div class="footer">
+          <div class="global">
+            <p>AU Free Phone 1800 305 175 NZ Free Phone 0800 33 55 66</p>
+            <p>www.SecuredSigning.com</p>
+          </div>
+          <div class="australia">
+            <p>Level 5, 11 Queens Road Melbourne Vic 3000 Australia</p>
+            <p>www.SecuredSigning.com.au</p>
+          </div>
+          <div class="new-zealand">
+            <p>
+              Building 2, 5 Ceres Ct. Albany PO Box 35902, Browns Bay Auckland,
+              New Zealand
+            </p>
+            <p>www.SecuredSigning.co.nz</p>
+          </div>
+        </div>
+          </form>
+   </div>
+
+
+<div>
+     <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

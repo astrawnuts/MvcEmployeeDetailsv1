@@ -1,0 +1,174 @@
+// Container Class - https://getbootstrap.com/
+
+$primary: #1c5b7c;
+$secondary: #ff5723;
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+// Container class - https://getbootstrap.com/
+
+// <!-- To Do Make This Into Separate File -->
+html {
+  font-size: 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5rem;
+}
+
+.center {
+  text-align: center;
+}
+
+// wraps the entire employee form
+.wrapper-employee-form {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  // Form Heading
+  h1 {
+    color: $primary;
+    text-transform: uppercase;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+
+    .left {
+      text-align: center;
+    }
+
+    .right {
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+// just the form element
+form.employee-form {
+  display: flex;
+  // background-color: green;
+  // width: 100%;
+  // text-align: center;
+  flex-direction: column;
+
+  // label element
+  label {
+    // display: flex;
+    // flex-direction: row;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+    color: $primary;
+
+    &:nth-of-type(1) {
+      margin-top: 0rem;
+    }
+  }
+
+  // input element
+  input {
+    // width: inherit;
+    padding: 0.75rem;
+    transition: 0.3s;
+  }
+
+  // Emergency Contact Person
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+
+    label {
+      color: $secondary;
+    }
+
+    legend {
+      // margin: 0.75rem;
+      color: $secondary;
+      text-transform: uppercase;
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+    }
+  }
+
+  //button element
+  button, input {
+    padding: 0.75rem;
+    border: none;
+    transition: 0.3s;
+
+    &.submit {
+      background-color: $secondary;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $primary;
+        // background-color: lighten($color: $secondary, $amount: 10%);
+      }
+
+      &:active {
+        border: #000;
+      }
+    }
+  }
+
+  .footer {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 786px) {
+  .wrapper-employee-form {
+    .header {
+      flex-direction: row;
+      text-align: center;
+
+      .left {
+        text-align: left;
+      }
+
+      .right {
+        text-align: right;
+      }
+    }
+  }
+
+  form.employee-form {
+    .footer {
+      flex-direction: row;
+      text-align: left;
+    }
+  }
+}

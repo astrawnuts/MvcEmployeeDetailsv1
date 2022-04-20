@@ -1,0 +1,132 @@
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+html {
+  font-size: 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.wrapper-employee-form {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.wrapper-employee-form h1 {
+  color: #1c5b7c;
+  text-transform: uppercase;
+}
+.wrapper-employee-form .header {
+  display: flex;
+  flex-direction: column;
+}
+.wrapper-employee-form .header .left {
+  text-align: center;
+}
+.wrapper-employee-form .header .right {
+  text-align: center;
+  width: 100%;
+}
+
+form.employee-form {
+  display: flex;
+  flex-direction: column;
+}
+form.employee-form label {
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  color: #1c5b7c;
+}
+form.employee-form label:nth-of-type(1) {
+  margin-top: 0rem;
+}
+form.employee-form input {
+  padding: 0.75rem;
+  transition: 0.3s;
+}
+form.employee-form fieldset {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+form.employee-form fieldset label {
+  color: #ff5723;
+}
+form.employee-form fieldset legend {
+  color: #ff5723;
+  text-transform: uppercase;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+form.employee-form button {
+  padding: 0.75rem;
+  border: none;
+  transition: 0.3s;
+  margin-top: 2rem;
+}
+form.employee-form button.submit {
+  margin-top: 2rem;
+  background-color: #ff5723;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+form.employee-form button.submit:hover {
+  color: #1c5b7c;
+}
+form.employee-form button.submit:active {
+  border: #000;
+}
+form.employee-form .footer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 786px) {
+  .wrapper-employee-form .header {
+    flex-direction: row;
+    text-align: center;
+  }
+  .wrapper-employee-form .header .left {
+    text-align: left;
+  }
+  .wrapper-employee-form .header .right {
+    text-align: right;
+  }
+
+  form.employee-form .footer {
+    flex-direction: row;
+    text-align: left;
+  }
+}/*# sourceMappingURL=styles.css.map */

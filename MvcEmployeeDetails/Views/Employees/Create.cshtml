@@ -1,0 +1,132 @@
+﻿@model MvcEmployeeDetails.Models.Employee
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+        <!--Our form begins here------------------------------------------------------------------------------------------------------------------->
+          <div class="container wrapper-employee-form">
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+        <br/>
+      <div class="header">
+        <div class="left">
+          <img src="@Url.Content("~/img/SecuredSigningLogo.PNG")" alt="Secured Signing Logo" />
+        </div>
+        <div class="right">
+          <p>
+            Commercial in Confidence. <br />
+            Unauthorised Reproduction Prohibited
+          </p>
+        </div>
+      </div>
+      <h1 class="center">New Employee Details</h1>
+      <!-- Validation using built in html -->
+      <form class="employee-form" asp-action="Create">
+        <label asp-for="FirstName">First Name: </label>
+
+        <input
+          asp-for="FirstName"
+          type="text"
+          name="firstName"
+          id="firstName"
+          minlength="3"
+          autofocus
+        />
+
+        <label asp-for="LastName">Last Name:</label>
+        <input asp-for="LastName" type="text" name="lastName" id="lastName" minlength="3" />
+        <label asp-for="FullAddress">Full Address:</label>
+        <input asp-for="FullAddress" type="text" name="fullAddress" id="fullAddress" minlength="10" />
+
+        <label asp-for="MailingAddressSameAsFullAddress">Use The Same Full Address As Mailing Address?</label>
+      
+          <input asp-for="MailingAddressSameAsFullAddress" />
+
+        <label asp-for="MailingAddress">Mailing Address:</label>
+        <input
+          asp-for="MailingAddress"
+          type="text"
+          name="mailingAddress"
+          id="mailingAddress"
+          minlength="10"
+        />
+        <label asp-for="EmailAddress">Email Address:</label>
+        <input asp-for="EmailAddress" type="email" name="email" id="email" />
+        <label asp-for="PhoneNumber">Phone Number:</label>
+        <input asp-for="PhoneNumber" type="text" name="phone" id="phone" />
+        <!-- This was spelled incorrectly in the PDF -->
+        <label asp-for="CitizenshipStatus">Citizenship Status:</label>
+        <input  asp-for="CitizenshipStatus" type="text" name="citizenshipStatus" id="citizenshipStatus" />
+        <label asp-for="EmploymentStartDate">Employment Start Date:</label>
+        <input
+          asp-for="EmploymentStartDate"
+          type="text"
+          name="employmentStartDate"
+          id="employmentStartDate"
+        />
+        <label asp-for="EmploymentType">Employment Type:</label>
+        <input asp-for="EmploymentType" type="text" name="employmentType" id="employmentType" />
+        <label asp-for="PositionTitle">Position Title:</label>
+        <input asp-for="PositionTitle" type="text" name="positionTitle" id="positionTitle" />
+
+        <label asp-for="EmployeeSignature">Employee's Signature:</label>
+        <input
+          asp-for="EmployeeSignature"
+            type="text"
+            name="employeeSignature"
+            id="employeeSignature"
+          />
+
+        <fieldset>
+          <legend><strong>Emergency Contact Person:</strong></legend>
+          <label asp-for="EmergencyContactName">Name:</label>
+          <input asp-for="EmergencyContactName" type="text" name="emergencyName" id="emergencyName" />
+          <label asp-for="EmergencyContactRelationship">Relationship:</label>
+          <input
+          asp-for="EmergencyContactRelationship"
+            type="text"
+            name="emergencyRelationship"
+            id="emergencyRelationship"
+          />
+          <label asp-for="EmergencyContactPhoneNumber">Phone Number:</label>
+          <input
+          asp-for="EmergencyContactPhoneNumber"
+            type="text"
+            name="emergencyPhoneNumber"
+            id="emergencyPhoneNumber"
+          />
+        </fieldset>
+    
+
+        <input class="submit" value="submit" type="submit" />
+
+        <div class="footer">
+          <div class="global">
+            <p>AU Free Phone 1800 305 175 NZ Free Phone 0800 33 55 66</p>
+            <p>www.SecuredSigning.com</p>
+          </div>
+          <div class="australia">
+            <p>Level 5, 11 Queens Road Melbourne Vic 3000 Australia</p>
+            <p>www.SecuredSigning.com.au</p>
+          </div>
+          <div class="new-zealand">
+            <p>
+              Building 2, 5 Ceres Ct. Albany PO Box 35902, Browns Bay Auckland,
+              New Zealand
+            </p>
+            <p>www.SecuredSigning.co.nz</p>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!--Our form begins here------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
