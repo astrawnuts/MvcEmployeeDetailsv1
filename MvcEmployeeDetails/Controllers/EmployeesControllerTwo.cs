@@ -44,6 +44,7 @@ namespace MvcEmployeeDetails.Models
         }
 
         // GET: EmployeesControllerTwo/Create
+        //[Route("/new-employee-details")]
         public IActionResult Create()
         {
             return View();
@@ -60,7 +61,8 @@ namespace MvcEmployeeDetails.Models
             {
                 _context.Add(employee);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                //return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details", new { Id = employee.Id } );
             }
             return View(employee);
         }
