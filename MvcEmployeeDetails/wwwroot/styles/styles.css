@@ -1,8 +1,22 @@
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+@media print {
+  .print-hidden {
+    display: none;
+  }
 }
 
 @media (min-width: 768px) {
@@ -22,7 +36,7 @@
 }
 html {
   font-size: 1rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5rem;
 }
 
@@ -39,7 +53,12 @@ html {
   text-transform: uppercase;
 }
 .wrapper-employee-form .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 .wrapper-employee-form .header .left {
@@ -50,8 +69,34 @@ html {
   width: 100%;
 }
 
-form.employee-form {
+.submission-wrapper {
+  margin-top: 3rem;
+}
+
+.submission-wrapper .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.submission-wrapper .header .left {
+  text-align: center;
+}
+.submission-wrapper .header .right {
+  text-align: center;
+  width: 100%;
+}
+
+form.employee-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 form.employee-form label {
@@ -65,10 +110,19 @@ form.employee-form label:nth-of-type(1) {
 }
 form.employee-form input {
   padding: 0.75rem;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
+
+form.employee-form input.employee-signature-field {}
+
 form.employee-form fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding-left: 1.5em;
   padding-right: 1.5em;
@@ -89,6 +143,7 @@ form.employee-form fieldset legend {
 form.employee-form button {
   padding: 0.75rem;
   border: none;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
   margin-top: 2rem;
 }
@@ -107,7 +162,12 @@ form.employee-form button.submit:active {
 }
 form.employee-form .footer {
   margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 1rem;
   text-align: center;
@@ -115,6 +175,9 @@ form.employee-form .footer {
 
 @media (min-width: 786px) {
   .wrapper-employee-form .header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
     text-align: center;
   }
@@ -125,8 +188,29 @@ form.employee-form .footer {
     text-align: right;
   }
 
+  .submission-wrapper .header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    text-align: center;
+  }
+  .submission-wrapper .header .left {
+    text-align: left;
+  }
+  .submission-wrapper .header .right {
+    text-align: right;
+  }
+
+  .submission-value {
+    text-align: left;
+  }
+
   form.employee-form .footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
     text-align: left;
   }
-}/*# sourceMappingURL=styles.css.map */
+}

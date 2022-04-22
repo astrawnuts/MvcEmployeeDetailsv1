@@ -4,12 +4,17 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+
+<div class="container">
+    <h1>All Records</h1>
+    <a asp-action="Create">New Employee Details Registration</a>
+</div>
+<br/>
+<hr/>
+
+<div class="container" style="overflow-x: scroll;">
+    <table class="table">
     <thead>
         <tr>
             <th>
@@ -117,3 +122,10 @@
 }
     </tbody>
 </table>
+
+</div>
+
+<br/>
+<br/>
+<br/>
+

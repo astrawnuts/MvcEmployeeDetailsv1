@@ -6,18 +6,22 @@
     <title>@ViewData["Title"] - MvcEmployeeDetails</title>
     <link rel="stylesheet" href="~/styles/normalise.css" />
     <link rel="stylesheet" href="~/styles/styles.css"/>
+    
 
 
 </head>
-<body>
+<body id="body">
+    @RenderBody()
+    
+    <!--Links To Google Fonts For Signatures-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Leckerli+One&family=Yellowtail&display=swap" rel="stylesheet"> 
+     <!--Links To Google Fonts For Signatures-->
 
- 
-            @RenderBody()
-   
-
-   
+    <script src="~/js/print.min.js"></script>
+    <script src="~/js/html2canvas.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

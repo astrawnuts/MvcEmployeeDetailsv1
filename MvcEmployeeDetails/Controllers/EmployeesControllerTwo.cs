@@ -22,7 +22,7 @@ namespace MvcEmployeeDetails.Models
         // GET: EmployeesControllerTwo
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Employee.ToListAsync());
+            return View();
         }
 
         // GET: EmployeesControllerTwo/Details/5

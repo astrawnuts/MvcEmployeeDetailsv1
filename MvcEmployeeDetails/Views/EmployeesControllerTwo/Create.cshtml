@@ -22,7 +22,7 @@ ViewData["Title"] = "New Employee Details";
                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
      <label asp-for="FirstName" class="control-label"></label>
-     <input asp-for="FirstName" class="form-control" />
+     <input asp-for="FirstName" class="form-control" minlength="4" />
      <span asp-validation-for="FirstName" class="text-danger"></span>
 
      <label asp-for="LastName" class="control-label"></label>
@@ -91,10 +91,17 @@ ViewData["Title"] = "New Employee Details";
           </fieldset>
 
           <label asp-for="EmployeeSignature" class="control-label"></label>
-          <input asp-for="EmployeeSignature" class="form-control" />
+          <input asp-for="EmployeeSignature" class="form-control employee-signature-field" style="font-family: 'Leckerli One'; font-size: 2.5rem; padding: 2rem; text-align: center;"/>
           <span asp-validation-for="EmployeeSignature" class="text-danger"></span>
 
-
+                     
+          <div class="employeeSignatureSelection">
+              <h4>PICK A FONT</h4>
+              <label for="font1">Font #1 - Leckerli One</label>
+              <input type="radio" id="font1" name="signatureFont" value="font-family: 'Leckerli One'; font-size: 4rem;" checked="checked">
+              <p>More fonts coming in future patches...</p>
+          </div>
+          
           <button type="submit" class="submit">Submit</button>
            <div class="footer">
           <div class="global">
@@ -117,9 +124,18 @@ ViewData["Title"] = "New Employee Details";
    </div>
 
 
-<div>
-     <a asp-action="Index">Back to List</a>
+  <br/>
+<div class="container">
+     <h4>Extra Controls (Not Part Of Assessment)*</h4>
+  <hr/>
+ <div>
+     <a asp-action="Index">View All Database Records</a>
 </div>
+</div>
+<br/>
+<br/>
+<br/>
+
 
 @section Scripts {
 @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
