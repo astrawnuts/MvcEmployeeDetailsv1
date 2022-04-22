@@ -27,7 +27,7 @@ function Employee(data) {
 }
 */
 
-
+//employee view model
 function EmployeeViewModel() {
     var self = this;
     self.Id = ko.observable();

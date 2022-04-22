@@ -3,6 +3,9 @@
     "mssql1": {
       "type": "mssql",
       "connectionId": "ConnectionStrings:MvcEmployeeDetailsContext"
+    },
+    "apis1": {
+      "type": "apis"
     }
   }
 }
