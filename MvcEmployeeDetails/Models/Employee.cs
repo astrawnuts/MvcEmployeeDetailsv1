@@ -27,7 +27,7 @@ namespace MvcEmployeeDetails.Models
         [Display(Name = "Email Address")]
         public string EmailAddress { get; set; }
 
-        [Display(Name = "Phone Number")]
+        [Display(Name = "US Phone Number")]
         public string PhoneNumber { get; set; }
 
         [Display(Name = "Citizenship Status")]

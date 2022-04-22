@@ -7,7 +7,9 @@ ViewData["Title"] = "Submission Summary";
 <div class="container submission-wrapper" id="printJS-form">
     <div class="header">
         <div class="left">
+           <a asp-action="Create"> 
           <img src="@Url.Content("~/img/SecuredSigningLogo.PNG")" alt="Secured Signing Logo" />
+          </a>
         </div>
         <div class="right">
           <p>
@@ -19,6 +21,12 @@ ViewData["Title"] = "Submission Summary";
     <h1>Summary</h1>
     <hr />
     <dl class="summary">
+        <dt class="database-column">
+           Unique Form ID:
+        </dt>
+        <dd class="submission-value">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
         <dt class="database-column">
             @Html.DisplayNameFor(model => model.FirstName)
         </dt>
@@ -154,7 +162,6 @@ ViewData["Title"] = "Submission Summary";
 
 <script>
     window.addEventListener('load', (event) => {
-      console.log('page is fully loaded');
       html2canvas(document.querySelector("#signature")).then(canvas => {
         //document.querySelector("#signature").appendChild(canvas)
         //document.body.appendChild(canvas)

@@ -8,7 +8,9 @@ ViewData["Title"] = "New Employee Details";
    <div class="container wrapper-employee-form">
       <div class="header">
         <div class="left">
-          <img src="@Url.Content("~/img/SecuredSigningLogo.PNG")" alt="Secured Signing Logo" />
+          <a asp-action="Create"> 
+            <img src="@Url.Content("~/img/SecuredSigningLogo.PNG")" alt="Secured Signing Logo" />
+          </a>
         </div>
         <div class="right">
           <p>
@@ -22,76 +24,76 @@ ViewData["Title"] = "New Employee Details";
                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
      <label asp-for="FirstName" class="control-label"></label>
-     <input asp-for="FirstName" class="form-control" minlength="4" />
+     <input asp-for="FirstName" class="form-control" minlength="4" data-bind="value: FirstName" />
      <span asp-validation-for="FirstName" class="text-danger"></span>
 
      <label asp-for="LastName" class="control-label"></label>
-     <input asp-for="LastName" class="form-control" />
+     <input asp-for="LastName" class="form-control" data-bind="value: LastName" />
      <span asp-validation-for="LastName" class="text-danger"></span>
 
      <label asp-for="FullAddress" class="control-label"></label>
-     <input asp-for="FullAddress" class="form-control" />
+     <input asp-for="FullAddress" class="form-control" data-bind="value: FullAddress" />
      <span asp-validation-for="FullAddress" class="text-danger"></span>
 
      <div class="form-group form-check"></div>
           <label class="form-check-label">
-               <input class="form-check-input" asp-for="MailingAddressSameAsFullAddress" /> @Html.DisplayNameFor(model
+               <input class="form-check-input" asp-for="MailingAddressSameAsFullAddress" data-bind="value: MailingAddressSameAsFullAddress" /> @Html.DisplayNameFor(model
                => model.MailingAddressSameAsFullAddress)
           </label>
 
 
           <label asp-for="MailingAddress" class="control-label"></label>
-          <input asp-for="MailingAddress" class="form-control" />
+          <input asp-for="MailingAddress" class="form-control" data-bind="value: MailingAddress" />
           <span asp-validation-for="MailingAddress" class="text-danger"></span>
 
 
           <label asp-for="EmailAddress" class="control-label"></label>
-          <input type="email" asp-for="EmailAddress" class="form-control" />
+          <input type="email" asp-for="EmailAddress" class="form-control" data-bind="value: EmailAddress" />
           <span asp-validation-for="EmailAddress" class="text-danger"></span>
 
           <label asp-for="PhoneNumber" class="control-label"></label>
-          <input asp-for="PhoneNumber" class="form-control" />
+          <input asp-for="PhoneNumber" class="form-control" data-bind="value: PhoneNumber" />
           <span asp-validation-for="PhoneNumber" class="text-danger"></span>
 
 
           <label asp-for="CitizenshipStatus" class="control-label"></label>
-          <input asp-for="CitizenshipStatus" class="form-control" />
+          <input asp-for="CitizenshipStatus" class="form-control" data-bind="value: CitizenshipStatus" />
           <span asp-validation-for="CitizenshipStatus" class="text-danger"></span>
 
 
           <label asp-for="EmploymentStartDate" class="control-label"></label>
-          <input type="date" asp-for="EmploymentStartDate" class="form-control" />
+          <input type="date" asp-for="EmploymentStartDate" class="form-control" data-bind="value: EmploymentStartDate" />
           <span asp-validation-for="EmploymentStartDate" class="text-danger"></span>
 
 
           <label asp-for="EmploymentType" class="control-label"></label>
-          <input asp-for="EmploymentType" class="form-control" />
+          <input asp-for="EmploymentType" class="form-control" data-bind="value: EmploymentType" />
           <span asp-validation-for="EmploymentType" class="text-danger"></span>
 
 
           <label asp-for="PositionTitle" class="control-label"></label>
-          <input asp-for="PositionTitle" class="form-control" />
+          <input asp-for="PositionTitle" class="form-control" data-bind="value: PositionTitle" />
           <span asp-validation-for="PositionTitle" class="text-danger"></span>
 
           <fieldset>
           <legend><strong>Emergency Contact Person:</strong></legend>
           <label asp-for="EmergencyContactName" class="control-label"></label>
-          <input asp-for="EmergencyContactName" class="form-control" />
+          <input asp-for="EmergencyContactName" class="form-control" data-bind="value: EmergencyContactName" />
           <span asp-validation-for="EmergencyContactName" class="text-danger"></span>
 
 
           <label asp-for="EmergencyContactRelationship" class="control-label"></label>
-          <input asp-for="EmergencyContactRelationship" class="form-control" />
+          <input asp-for="EmergencyContactRelationship" class="form-control" data-bind="value: EmergencyContactRelationship" />
           <span asp-validation-for="EmergencyContactRelationship" class="text-danger"></span>
 
 
           <label asp-for="EmergencyContactPhoneNumber" class="control-label"></label>
-          <input asp-for="EmergencyContactPhoneNumber" class="form-control" />
+          <input asp-for="EmergencyContactPhoneNumber" class="form-control" data-bind="value: EmergencyContactPhoneNumber" />
           <span asp-validation-for="EmergencyContactPhoneNumber" class="text-danger"></span>
           </fieldset>
 
           <label asp-for="EmployeeSignature" class="control-label"></label>
-          <input asp-for="EmployeeSignature" class="form-control employee-signature-field" style="font-family: 'Leckerli One'; font-size: 2.5rem; padding: 2rem; text-align: center;"/>
+          <input asp-for="EmployeeSignature" class="form-control employee-signature-field" style="font-family: 'Leckerli One'; font-size: 2.5rem; padding: 2rem; text-align: center;" data-bind="value: EmployeeSignature"/>
           <span asp-validation-for="EmployeeSignature" class="text-danger"></span>
 
                      
@@ -99,7 +101,7 @@ ViewData["Title"] = "New Employee Details";
               <h4>PICK A FONT</h4>
               <label for="font1">Font #1 - Leckerli One</label>
               <input type="radio" id="font1" name="signatureFont" value="font-family: 'Leckerli One'; font-size: 4rem;" checked="checked">
-              <p>More fonts coming in future patches...</p>
+              <p>More fonts coming in future patches... 🤖</p>
           </div>
           
           <button type="submit" class="submit">Submit</button>
