@@ -1,66 +1,35 @@
 ﻿@model IEnumerable<MvcEmployeeDetails.Models.Employee>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "All Registered Employees";
 }
 
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 <div class="container">
     <h1>All Records</h1>
-    <a asp-action="Create">New Employee Details Registration</a>
+    <a asp-action="Create" role="button" class="secondary">New Employee Registration</a>
 </div>
 <br/>
 <hr/>
 
-<div class="container" style="overflow-x: scroll;">
+<div class="container" style="">
     <table class="table">
     <thead>
         <tr>
+            <th>
+                Employee ID:
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.FirstName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FullAddress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MailingAddressSameAsFullAddress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MailingAddress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EmailAddress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CitizenshipStatus)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EmploymentStartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EmploymentType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PositionTitle)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EmergencyContactName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EmergencyContactRelationship)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EmergencyContactPhoneNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EmployeeSignature)
             </th>
             <th></th>
         </tr>
@@ -69,54 +38,19 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.LastName)
             </td>
+     
             <td>
-                @Html.DisplayFor(modelItem => item.FullAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MailingAddressSameAsFullAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MailingAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmailAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CitizenshipStatus)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmploymentStartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmploymentType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PositionTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmergencyContactName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmergencyContactRelationship)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmergencyContactPhoneNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmployeeSignature)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a role="button" class="outline" asp-action="Edit" asp-route-id="@item.Id">Edit</a> <br/>  <br/>
+                <a role="button" asp-action="Details" asp-route-id="@item.Id">View All Details</a> <br/>  <br/>
+                <a role="button" class="secondary" asp-action="Delete" asp-route-id="@item.Id">Delete Employee</a>  <br/>
             </td>
         </tr>
 }
@@ -129,3 +63,6 @@
 <br/>
 <br/>
 
+
+
+ <link rel="stylesheet" href="~/styles/pico.min.css" />

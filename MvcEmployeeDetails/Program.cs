@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MvcEmployeeDetails.Data;
+using MvcEmployeeDetails.Models;
 var builder = WebApplication.CreateBuilder(args);
+
 
 builder.Services.AddDbContext<MvcEmployeeDetailsContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MvcEmployeeDetailsContext") ?? throw new InvalidOperationException("Connection string 'MvcEmployeeDetailsContext' not found.")));
@@ -10,6 +12,13 @@ builder.Services.AddDbContext<MvcEmployeeDetailsContext>(options =>
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    SeedData.Initialize(services);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

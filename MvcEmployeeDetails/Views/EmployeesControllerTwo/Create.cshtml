@@ -131,13 +131,29 @@ ViewData["Title"] = "New Employee Details";
      <h4>Extra Controls (Not Part Of Assessment)*</h4>
   <hr/>
  <div>
-     <a asp-action="Index">View All Database Records</a>
+     <br />
+     <a asp-action="Index" class="button" role="button">View All Database Records</a>
+     <br/>
 </div>
 </div>
 <br/>
 <br/>
 <br/>
 
+<style>
+    .button {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding: 1rem;
+        background-color: #596b78;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .button:hover {
+        background-color: #43515b;
+    }
+</style>
 
 @section Scripts {
 @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
