@@ -2,7 +2,14 @@
 using Microsoft.Extensions.DependencyInjection;
 using MvcEmployeeDetails.Data;
 using MvcEmployeeDetails.Models;
+using Azure.Identity;
 var builder = WebApplication.CreateBuilder(args);
+
+var keyVaultEndpoint = new Uri(Environment.GetEnvironmentVariable("VaultUri"));
+builder.Configuration.AddAzureKeyVault(keyVaultEndpoint, new DefaultAzureCredential());
+
+//var keyVaultEndpoint = new Uri(Environment.GetEnvironmentVariable("VaultUri"));
+//builder.Configuration.AddAzureKeyVault(keyVaultEndpoint, new DefaultAzureCredential());
 
 
 builder.Services.AddDbContext<MvcEmployeeDetailsContext>(options =>
